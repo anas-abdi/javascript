@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .TheBigText{
+            font-size: 50px;
+            color: blue;
+           
+        }
+    </style>
+</head>
+<body>
+    <h1 id="theUnluckyOne">I love mogdishu (i wrote this manually)</h1>
+    <h1 name = "BigCity" class = "TheBigText">The Other Big City</h1>
+    <h1 name = "BigCity" class = "TheBigText">The Other Big City</h1>
+
+
+    <script>
+        for(let i = 0; i < 2; i++){
+        let anotherH1 = document.createElement('h1');
+        anotherH1.textContent = 'I love Mogadishu (i wrote this in js )';
+        anotherH1.style.color = "red"
+        document.body.appendChild(anotherH1);
+        }
+
+let anotherP = window.document.createElement('p')
+anotherP.textContent = 'I love Mogadishu (i wrote this in js)';
+anotherP.style.color = "blue";
+document.body.appendChild(anotherP);
+// document.body.removeChild(anotherP)
+let anotherH1 = document.getElementById('theUnluckyOne');
+// document.body.removeChild(anotherH1)
+anotherH1.style.color = "green";
+anotherH1.textContent = "I love Somalia<p> ok </p>";
+
+// let h1s = document.getElementsByName('BigCity');
+// for(let i = 0; i < h1s.length; i++) {
+//     h1s[i].style.color = "green";
+// }
+
+// let h1s = document.getElementsByTagName('h1');
+// for(let i = 0; i < h1s.length; i++) {
+//     h1s[i].style.color = "brown";
+// }
+
+// let h1s = document.getElementsByClassName('TheBigText');
+// for(let i = 0; i < h1s.length; i++) {
+//     h1s[i].style.color = "blue";
+// }
+
+let h1s = document.querySelectorAll('.TheBigText');
+for(let i = 0; i < h1s.length; i++) {
+    h1s[i].style.color = "black";
+}
+
+let theUnluckyOne = document.querySelector("#theUnluckyOne")
+theUnluckyOne.style.color = "purple";
+theUnluckyOne.textContent = "I love china"
+
+
+    </script>
+</body>
+</html>
