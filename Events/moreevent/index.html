@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Events Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>✨ JavaScript Event Examples ✨</h1>
+
+    <!-- Mouse Events -->
+    <section>
+      <h2>🐭 Mouse Events</h2>
+      <button id="mouseBtn">Hover / Click Me</button>
+      <p id="mouseResult">Try pressing, clicking, or hovering the button.</p>
+    </section>
+
+    <!-- Keyboard Events -->
+    <section>
+      <h2>⌨️ Keyboard Events</h2>
+      <input type="text" id="keyboardInput" placeholder="Type something here...">
+      <p id="keyboardResult">Press any key inside the input box.</p>
+    </section>
+
+    <!-- Form Events -->
+    <section>
+      <h2>📋 Form Events</h2>
+      <form id="myForm">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <div class="btn-group">
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      <p id="formResult">Fill out the form to test form events.</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

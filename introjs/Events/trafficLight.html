@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traffic Light Simulation</title>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    margin-top: 50px;
+  }
+
+  .traffic-light {
+    width: 100px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .light {
+    width: 60px;
+    height: 60px;
+    margin: 15px auto;
+    background-color: #555;
+    border-radius: 50%;
+    transition: background-color 0.5s;
+  }
+
+  .red.active { background-color: red; }
+  .yellow.active { background-color: yellow; }
+  .green.active { background-color: green; }
+</style>
+</head>
+<body>
+
+<h2>Traffic Light Simulation</h2>
+
+<div class="traffic-light">
+  <div class="light red"></div>
+  <div class="light yellow"></div>
+  <div class="light green"></div>
+</div>
+
+<script>
+  const redLight = document.querySelector('.red');
+  const yellowLight = document.querySelector('.yellow');
+  const greenLight = document.querySelector('.green');
+
+  function turnRed() {
+    redLight.classList.add('active');
+    yellowLight.classList.remove('active');
+    greenLight.classList.remove('active');
+
+    setTimeout(turnGreen, 5000); // red stays for 5s
+  }
+
+  function turnGreen() {
+    redLight.classList.remove('active');
+    yellowLight.classList.remove('active');
+    greenLight.classList.add('active');
+
+    setTimeout(turnYellow, 5000); // green stays for 5s
+  }
+
+  function turnYellow() {
+    redLight.classList.remove('active');
+    yellowLight.classList.add('active');
+    greenLight.classList.remove('active');
+
+    setTimeout(turnRed, 2000); // yellow stays for 2s
+  }
+
+  // Start the traffic light cycle
+  turnRed();
+</script>
+
+</body>
+</html>

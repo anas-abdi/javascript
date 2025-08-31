@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>African Countries with Flags</title>
+<style>
+  #selectedCountry {
+    margin-top: 20px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .flag {
+    width: 40px;
+    height: 25px;
+    background-size: cover;
+    border: 1px solid #333;
+  }
+
+  /* Flags using background images (from online URLs) */
+  .Nigeria { background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg'); }
+  .Kenya { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg'); }
+  .Egypt { background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg'); }
+  .SouthAfrica { background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg'); }
+  .Ghana { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg'); }
+  .Morocco { background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg'); }
+  .Ethiopia { background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg'); }
+  .Somalia { background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Somalia.svg'); }
+</style>
+</head>
+<body>
+
+<h2>Select an African Country</h2>
+
+<select id="countriesList">
+  <option value="">--Select a Country--</option>
+  <option value="Nigeria">Nigeria</option>
+  <option value="Kenya">Kenya</option>
+  <option value="Egypt">Egypt</option>
+  <option value="SouthAfrica">South Africa</option>
+  <option value="Ghana">Ghana</option>
+  <option value="Morocco">Morocco</option>
+  <option value="Ethiopia">Ethiopia</option>
+  <option value="Somalia">Somalia</option>
+</select>
+
+<div id="selectedCountry">You haven't selected a country yet.</div>
+
+<script>
+  const countriesList = document.getElementById('countriesList');
+  const selectedCountry = document.getElementById('selectedCountry');
+
+  countriesList.onchange = function() {
+    const country = this.value;
+    if(country) {
+      selectedCountry.innerHTML = `<div class="flag ${country}"></div> ${country}`;
+    } else {
+      selectedCountry.textContent = "You haven't selected a country yet.";
+    }
+  }
+</script>
+
+</body>
+</html>

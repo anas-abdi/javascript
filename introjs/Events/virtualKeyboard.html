@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyboard Events Demo</title>
+<style>
+  .keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    margin: 20px auto;
+  }
+  .key {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    user-select: none;
+    transition: all 0.2s;
+  }
+  .key.active {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.1);
+  }
+  #pressedKey {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="keyboard">
+  <div class="key" data-key="A">A</div>
+  <div class="key" data-key="S">S</div>
+  <div class="key" data-key="D">D</div>
+  <div class="key" data-key="F">F</div>
+  <div class="key" data-key="G">G</div>
+  <div class="key" data-key="H">H</div>
+  <div class="key" data-key="J">J</div>
+  <div class="key" data-key="K">K</div>
+  <div class="key" data-key="L">L</div>
+  <div class="key" data-key="B">B</div>
+  <div class="key" data-key="X">X</div>
+  <div class="key" data-key="L">L</div>
+  <div class="key" data-key="I">I</div>
+  <div class="key" data-key="O">O</div>
+  <div class="key" data-key="P">P</div>
+  <div class="key" data-key="M">M</div>
+  <div class="key" data-key="V">V</div>
+</div>
+
+<div id="pressedKey">Press a key!</div>
+
+<script>
+  const keys = document.querySelectorAll('.key');
+  const pressedKeyDiv = document.getElementById('pressedKey');
+
+  document.addEventListener('keydown', (event) => {
+    const keyPressed = event.key.toUpperCase(); // convert to uppercase
+    pressedKeyDiv.textContent = `You pressed: ${keyPressed}`;
+
+    keys.forEach((key) => {
+      key.classList.remove('active'); // remove active from all keys
+      if (key.dataset.key === keyPressed) {
+        key.classList.add('active'); // add active to the pressed key
+      }
+    });
+  });
+
+  document.addEventListener('keyup', () => {
+    keys.forEach((key) => key.classList.remove('active')); // remove highlight on key release
+  });
+</script>
+
+</body>
+</html>
